@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(CUDA_TEMPLATE LANGUAGES CXX CUDA)
+SET(CMAKE_CXX_STANDARD 20)
+SET(CMAKE_CUDA_STANDARD 20)
+set(SRC main.cu)
+add_executable(${PROJECT_NAME} ${SRC})

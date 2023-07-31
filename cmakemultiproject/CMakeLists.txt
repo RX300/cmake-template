@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.25)
+set(CMAKE_TOOLCHAIN_FILE "D:/utils/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_TARGET_TRIPLET "x64-windows")
+project(MultiProject)
+add_subdirectory(include/header)
+add_subdirectory(example/example1)
+add_subdirectory(example/example2)

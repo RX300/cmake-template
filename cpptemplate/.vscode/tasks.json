@@ -1,0 +1,64 @@
+//vcode里运行c++官方教程见https://code.visualstudio.com/docs/cpp/config-msvc
+//tasks,json各项参数的参考网站
+//https://code.visualstudio.com/docs/editor/tasks#_shell-task
+//描述：在vscode中配置C++编译器，使用cl.exe编译器
+//注意：在vscode中使用cl.exe编译器，需要在系统环境变量中配置cl.exe的路径
+//cl.exe编译器各项参数的网站
+//https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options-listed-by-category?view=msvc-170
+{
+	"version": "2.0.0",
+	//windows这项是新加的，用于无法从 Visual Studio 的开发人员命令提示符运行 VS 代码时
+	//参见https://code.visualstudio.com/docs/cpp/config-msvc
+	"windows": {
+		"options": {
+		  "shell": {
+			"executable": "cmd.exe",
+			"args": [
+				//在Windows操作系统中，/C是cmd.exe的参数之一，它的含义是执行完指定的命令后关闭cmd.exe窗口。
+				//在这个JSON配置中，/C用于运行一系列命令，包括执行VsDevCmd.bat脚本，然后再执行其它命令。
+				//因此，Windows的args中的"/C"的作用是在执行完命令后关闭cmd.exe窗口。
+				//参见https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd
+			  "/C",
+			  // The path to VsDevCmd.bat depends on the version of Visual Studio you have installed.
+			  "\"D:/VisualStudio/community/Common7/Tools/VsDevCmd.bat\"",
+			  "&&"
+			]
+		  }
+		}
+	  },
+	"tasks": [
+		{
+			"type": "shell",//这项默认是cppbuild，改成shell表示命令行运行
+			"label": "C/C++: cl.exe 生成活动文件",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"/Fd:",
+				"${workspaceFolder}\\build\\",
+				//指定对象 (.obj) 文件的名称或要使用的目录，而不是默认目录。
+				//https://learn.microsoft.com/zh-cn/cpp/build/reference/fo-object-file-name?view=msvc-170
+				"/Fo:",
+				"${workspaceFolder}\\build\\",
+				"/Fd:",
+				"${workspaceFolder}\\build\\",
+				"${file}",
+				"test.cpp",
+
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "编译器: cl.exe"
+		}
+	]
+}

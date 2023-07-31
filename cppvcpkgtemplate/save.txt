@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.5)
+project(cmake_vcpkg)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find packages installed by vcpkg
+find_package(fmt CONFIG REQUIRED)
+
+
+
+# Add source files
+add_executable(vcpkg_hello main.cpp fmt_hello.h)
+
+# Link the executable with the required libraries
+target_link_libraries(vcpkg_hello PRIVATE fmt::fmt)
+
+find_package(glm CONFIG REQUIRED)
+target_link_libraries(vcpkg_hello PRIVATE glm::glm)
