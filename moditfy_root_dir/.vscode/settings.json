@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "Makefile": "cpp",
+        "*.shader": "shaderlab",
+        "*.hlsl": "hlsl",
+        "*.pyscene": "python",
+        "*.py": "python",
+        "filesystem": "cpp"
+    }
+}
