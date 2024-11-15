@@ -10,6 +10,7 @@
     //指定第三方头文件目录
     "clangd.fallbackFlags": [
         "-Id:/utils/vcpkg/vcpkg/installed/x64-windows/include",
+        "-I${workspaceFolder}/include"
     ],
     //关闭vscode c++插件的智能提示防止和clangd冲突
     //另外，要使用clangd需要自己下载好然后在clangd插件里设置clangd的位置

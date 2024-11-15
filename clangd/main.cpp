@@ -1,12 +1,12 @@
-
-#include "glm/glm.hpp"
-#include <format>
+#include "fmt_hello.h"
 #include <iostream>
 
 using namespace std;
 void printTypeSize();
 void useLambda();
 // 判断大端小端
+// 联合体在内存中的存储方式是所有成员共用同一块内存空间
+// 所以给uint32赋值实际上也会给char赋值
 void checkEndian() {
   union {
     uint32_t i;
@@ -23,7 +23,10 @@ void checkEndian() {
 }
 // hello world
 using namespace std;
-int main() { checkEndian(); }
+int main() {
+  checkEndian();
+  fmt_hello();
+}
 
 void printTypeSize() {
   cout << "Size of char: " << sizeof(char) << " byte(s)" << endl;
