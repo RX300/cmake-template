@@ -8,7 +8,7 @@
             "name": "C++ MSBuild 调试",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/WebserverMain.exe",
+            "program": "${workspaceFolder}/build/clangdexe.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
