@@ -1,0 +1,29 @@
+﻿CompileFlags:
+    CompilationDatabase: build/       # Search build/ directory for compile_commands.json
+  Add:
+    - "-Wall" # 启用所有警告
+    - "-Wextra" # 启用额外警告
+    - "-std=c++20" # 使用C++20标准
+    - "-Iinclude" # 包含头文件, 相对路径,
+    - "-isystemD:/utils/vcpkg/vcpkg/installed/x64-windows/include" # 包含头文件, 绝对路径, vcpkg的安装包头文件路径
+
+
+Diagnostics:
+  ClangTidy:
+    Add: ["cppcoreguidelines-*", "modernize-*", "performance-*"]
+    Remove: ["clang-analyzer-*"]
+
+InlayHints:              # 代码提示设置部分
+  Enabled: true          # 启用代码提示
+  ParameterNames: true   # 显示参数名称提示
+  DeducedTypes: true     # 显示推断类型提示
+  Designators: true      # 显示设计器提示
+
+Completion:              # 代码补全设置部分
+  AllScopes: true        # 启用所有作用域的代码补全
+  Brackets: "[]"         # 补全时使用的括号类型
+
+SemanticTokens:          # 语义标记设置部分
+  Enabled: true          # 启用语义标记
+  DisabledKinds: ["Macro"] # 禁用宏语义标记
+  DisabledModifiers: ["Static"] # 禁用静态修饰符语义标记

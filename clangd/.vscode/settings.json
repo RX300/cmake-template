@@ -1,18 +1,9 @@
 {
-    "files.associations": {
-        "Makefile": "cpp",
-        "*.shader": "shaderlab",
-        "*.hlsl": "slang",
-        "*.pyscene": "python",
-        "*.py": "python",
-        "iostream": "cpp"
-    },
-    //指定第三方头文件目录
-    "clangd.fallbackFlags": [
-        "-Id:/utils/vcpkg/vcpkg/installed/x64-windows/include",
-        "-I${workspaceFolder}/include"
-    ],
-    //关闭vscode c++插件的智能提示防止和clangd冲突
-    //另外，要使用clangd需要自己下载好然后在clangd插件里设置clangd的位置
-    "C_Cpp.intelliSenseEngine": "disabled"
+"cmake.generator": "Ninja",
+"cmake.configureOnOpen": false,
+"cmake.buildOnSave": false,
+"cmake.buildDirectory": "${workspaceFolder}/build",
+"clangd.path": "c:\\Users\\RX\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
+"C_Cpp.intelliSenseEngine": "disabled",
+"cmake.outputLogEncoding": "utf-8"
 }
