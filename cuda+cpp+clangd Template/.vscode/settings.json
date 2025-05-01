@@ -1,0 +1,10 @@
+{
+// "cmake.generator": "Visual Studio 17 2022",
+"cmake.generator": "Ninja",
+"cmake.configureOnOpen": false,
+"cmake.buildOnSave": false,
+"cmake.buildDirectory": "${workspaceFolder}/build",
+"clangd.path": "c:\\Users\\RX\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
+"C_Cpp.intelliSenseEngine": "disabled",
+"cmake.outputLogEncoding": "utf-8"
+}

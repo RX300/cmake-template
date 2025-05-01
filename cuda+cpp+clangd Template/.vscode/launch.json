@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(Windows) Launch my_cuda_app",
+            "type": "cppvsdbg", // 使用 Visual Studio 调试器
+            "request": "launch",
+            // 通常由 CMake Tools 自动填充，指向你的可执行文件
+            "program": "${workspaceFolder}/build/Debug/my_cuda_app.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build/Debug", // 设置工作目录为可执行文件所在目录
+            "environment": [],
+            "console": "externalTerminal", // 在 VS Code 集成终端中显示输出
+            //"preLaunchTask": "CMake: build" // (可选) 确保在启动前构建最新版本
+        }
+    ]
+}

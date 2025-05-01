@@ -1,13 +1,17 @@
 ﻿CompileFlags:
-  CompilationDatabase: build/       # Search build/ directory for compile_commands.json
   Add:
     - "-Wall" # 启用所有警告
     - "-Wextra" # 启用额外警告
     - "-std=c++20" # 使用C++20标准
     - "-Iinclude" # 包含头文件, 相对路径,
-    ; - "-isystemD:/utils/vcpkg/vcpkg/installed/x64-windows/include" # 包含头文件, 绝对路径, vcpkg的安装包头文件路径
-
-
+    - "-isystemD:/utils/vcpkg/vcpkg/installed/x64-windows/include" # 包含头文件, 绝对路径, vcpkg的安装包头文件路径
+    - --cuda-path=D:\\cuda\\cuda12_6
+  Remove:
+    - -forward-unknown-to-host-compiler
+    - --generate-code*
+    - -rdc=*
+    - -Xcompiler*
+  CompilationDatabase: build/       # Search build/ directory for compile_commands.json
 Diagnostics:
   ClangTidy:
     Add: ["cppcoreguidelines-*", "modernize-*", "performance-*"]
